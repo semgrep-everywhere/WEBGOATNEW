@@ -22,5 +22,7 @@ jobs:
     container:
       image: semgrep/semgrep
     steps:
+    - run: apk add openjdk17
+    - run: apk add maven
     - uses: actions/checkout@v4
     - run: semgrep ci --allow-local-builds
